@@ -1,0 +1,14 @@
+{
+    "es":{
+        "home":"Inicio",
+        "game":"Juego",
+        "user_game":"Juego Usuario",
+        "order":"Orden",
+        "services":"Servicios",
+        "aboutus":"Sobre nosotros",
+        "contact":"Contacto",
+        "en":"Inglés",
+        "es":"Espanol",
+        "va":"Valenciano"
+    }
+}

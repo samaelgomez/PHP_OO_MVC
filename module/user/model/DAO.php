@@ -1,14 +1,14 @@
 <?php
 	$path = $_SERVER['DOCUMENT_ROOT'] . '/egames/';
     include($path . "model/connect.php");
-    include($path . "DAO/Models/DAO.php");
+	include($path . "DAO/Models/DAO.php");
 	class DAO_user extends DAO{
 		function insert_user($data){
         	$name=$data[name];
         	$pegi=$data[pegi];
         	$edition=$data[edition];
         	foreach ($data[languages] as $index) {
-        	    $languages=$languages."$index:";
+        	    $languages=$languages."$index, ";
         	}
         	$sql = " INSERT INTO videogames (name, pegi, edition, languages)"
         		. " VALUES ('$name', '$pegi', '$edition', '$languages')";
@@ -42,10 +42,10 @@
         	$pegi=$data[pegi];
         	$edition=$data[edition];
         	foreach ($data[languages] as $index) {
-        	    $languages=$languages."$index:";
+        	    $languages=$languages."$index, ";
         	}
         	
-        	$sql = " UPDATE videogames SET name='$name', pegi='$pegi', edition='$edition', languages='$languages' WHERE name='$name'";
+			$sql = "UPDATE videogames SET name='$name', pegi='$pegi', edition='$edition', languages='$languages' WHERE name='$name'";
             
             $conexion = connect::con();
             $res = mysqli_query($conexion, $sql);

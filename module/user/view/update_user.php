@@ -1,24 +1,17 @@
 <div id="contenido">
-    <form autocomplete="on" method="post" name="aupdate_user" id="update_user" onsubmit="return validate();" action="index.php?page=controller_user&op=update">
+    <form autocomplete="on" method="post" name="update_user" id="update_user" onsubmit="return validate();" action="index.php?page=controller_user&op=update">
         <h1>Modify game details</h1>
         <table border='0'>
             <tr>
                 <td>Name: </td>
                 <td><input type="text" id="name" name="name" placeholder="Name" value="<?php echo $name['name'];?>"/></td>
-                <td><font color="red">
-                    <span id="error_name" class="error">
-                        <?php
-                            echo "$error_name";
-                        ?>
-                    </span>
-                </font></font></td>
             </tr>
             
             <tr>
                 <td>Pegi: </td>
                 <td>
                     <?php
-                        if ($name['pegi']===3){
+                        if ($name['pegi']==3){
                     ?>
                         <input type="radio" id="pegi" name="pegi" placeholder="Pegi" value="3" checked/>3
                         <input type="radio" id="pegi" name="pegi" placeholder="Pegi" value="7"/>7
@@ -26,7 +19,7 @@
                         <input type="radio" id="pegi" name="pegi" placeholder="Pegi" value="16"/>16
                         <input type="radio" id="pegi" name="pegi" placeholder="Pegi" value="18"/>18
                     <?php    
-                        }elseif ($name['pegi']===7){
+                        }elseif ($name['pegi']==7){
                     ?>
                         <input type="radio" id="pegi" name="pegi" placeholder="Pegi" value="3"/>3
                         <input type="radio" id="pegi" name="pegi" placeholder="Pegi" value="7" checked/>7
@@ -34,7 +27,7 @@
                         <input type="radio" id="pegi" name="pegi" placeholder="Pegi" value="16"/>16
                         <input type="radio" id="pegi" name="pegi" placeholder="Pegi" value="18"/>18
                     <?php   
-                        }elseif ($name['pegi']===12){
+                        }elseif ($name['pegi']==12){
                     ?>
                         <input type="radio" id="pegi" name="pegi" placeholder="Pegi" value="3"/>3
                         <input type="radio" id="pegi" name="pegi" placeholder="Pegi" value="7"/>7
@@ -42,7 +35,7 @@
                         <input type="radio" id="pegi" name="pegi" placeholder="Pegi" value="16"/>16
                         <input type="radio" id="pegi" name="pegi" placeholder="Pegi" value="18"/>18
                     <?php   
-                        }elseif ($name['pegi']===16){
+                        }elseif ($name['pegi']==16){
                     ?>
                         <input type="radio" id="pegi" name="pegi" placeholder="Pegi" value="3"/>3
                         <input type="radio" id="pegi" name="pegi" placeholder="Pegi" value="7"/>7
@@ -61,26 +54,19 @@
                         }
                     ?>
                 </td>
-                <td><font color="red">
-                    <span id="error_pegi" class="error">
-                        <?php
-                            echo "$error_pegi";
-                        ?>
-                    </span>
-                </font></font></td>
             </tr>
             
             <tr>
                 <td>Edition: </td>
                 <td><select id="edition" name="edition" placeholder="Edition">
                     <?php
-                        if($name['edition']==="standard"){
+                        if($name['edition']=="standard"){
                     ?>
                         <option value="standard" selected>Standard</option>
                         <option value="deluxe">Deluxe</option>
                         <option value="collectionist">Collectionist</option>
                     <?php
-                        }elseif($name['edition']==="deluxe"){
+                        }elseif($name['edition']=="deluxe"){
                     ?>
                         <option value="standard">Standard</option>
                         <option value="deluxe" selected>Deluxe</option>
@@ -95,13 +81,6 @@
                         }
                     ?>
                     </select></td>
-                <td><font color="red">
-                    <span id="error_edition" class="error">
-                        <?php
-                            echo "$error_edition";
-                        ?>
-                    </span>
-                </font></font></td>
             </tr>
             
             <tr>
@@ -147,13 +126,6 @@
                         }
                     ?>
                 </td>
-                <td><font color="red">
-                    <span id="error_languages" class="error">
-                        <?php
-                            echo "$error_languages";
-                        ?>
-                    </span>
-                </font></font></td>
             </tr>
             
             <tr>

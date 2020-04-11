@@ -2,10 +2,6 @@
     $path = $_SERVER['DOCUMENT_ROOT'] . '/egames/';
     include($path . "module/user/model/DAO.php");
     include($path . "DAO/controllers/master_controller.php");
-
-    if (isset($_SESSION["tiempo"])) {  
-		$_SESSION["tiempo"] = time();
-	}
     
     switch($_GET['op']){
         case 'list';
@@ -65,8 +61,8 @@
             			$callback = 'index.php?page=controller_user&op=list';
         			    die('<script>window.location.href="'.$callback .'";</script>');
             		}else{
-            			$callback = 'index.php?page=503';
-    			        die('<script>window.location.href="'.$callback .'";</script>');
+            			// $callback = 'index.php?page=503';
+    			        // die('<script>window.location.href="'.$callback .'";</script>');
             		}
                 }
             }
@@ -85,7 +81,7 @@
                     $_SESSION['name']=$_POST;
                     try{
                         $dao = new DAO_user();
-    		            $rdo = $dao->update_user($_POST);
+                        $rdo = $dao->update_user($_POST);
                     }catch (Exception $e){
                         $callback = 'index.php?page=503';
         			    die('<script>window.location.href="'.$callback .'";</script>');
@@ -212,7 +208,7 @@
 				require("module/user/view/list_order.php");
 			break;
 			
-		case 'datatable':
+        case 'datatable':
             echo rdo(new DAO_user(), //$dao
             "select_order",//$target_method
             "multiple"//$type

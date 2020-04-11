@@ -53,6 +53,3 @@
         </div>
     </div>
 </section>
-
-<!-- Active js -->
-<script src="view/js/active.js"></script>

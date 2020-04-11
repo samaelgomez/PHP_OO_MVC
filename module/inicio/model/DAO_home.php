@@ -13,7 +13,7 @@
                 $counter = count($value);
                 foreach ($value as $key2 => $value2) {
                     $counter--;
-                    $and_or = $counter===0?"AND":"OR";
+                    $and_or = $counter==0?"AND":" OR";
                     $final_where .=" ". $key."= '$value2' $and_or";
                 }
             }
@@ -42,7 +42,7 @@
                     if($data["filters"]){
                         // $categories = $data["filters"]["categoria"];
                         $concat_sql = filtros($data["filters"]);
-                        $sql .= " WHERE ".$concat_sql ;
+                        $sql .= " WHERE ".$concat_sql." GROUP BY videogames.name" ;
                         
                     }
                 }

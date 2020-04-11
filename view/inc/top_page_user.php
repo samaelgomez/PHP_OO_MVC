@@ -46,7 +46,7 @@
         			dateFormat: 'dd/mm/yy', 
         			changeMonth: true, 
         			changeYear: true, 
-        			yearRange: '1900:2016',
+        			yearRange: '1900:2020',
         			onSelect: function(selectedDate) {
         			}
         		});

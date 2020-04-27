@@ -90,7 +90,7 @@
                                         <li><a href="single-game-review.html">Single Game Review</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="contact.html">Contact</a></li>
+                                <li><a href="index_con.php?page=contactus">Contact</a></li>
                                 &nbsp;&nbsp;&nbsp;
                                 <button data-tr="en" id="btn-en"></button>
                                 <button data-tr="es" id="btn-es"></button>

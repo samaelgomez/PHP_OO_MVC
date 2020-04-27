@@ -16,7 +16,7 @@
 			include("module/aboutus/".$_GET['page'].".php");
 			break;
 		case "contactus";
-			include("module/contact/".$_GET['page'].".php");
+			include("module/contact/view/".$_GET['page'].".html");
 			break;
 		case "404";
 			include("view/inc/error".$_GET['page'].".php");

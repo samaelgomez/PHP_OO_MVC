@@ -7,17 +7,22 @@ function validate_game(){
 }
 
 function validate(){
+    $name=$_POST['name'];
+    $pegi=$_POST['pegi'];
+    $edition=$_POST['edition'];
+    $languages=$_POST['languages'];
     $check=true;
     $error='';
 
     try{
         if(validate_game()){
-            $error = "That game is already in the database...";
+            echo '<script language="javascript">alert("That game is already in the database...")</script>';
             $check = false;
         }
     }catch (Exception $e){
         $error = '';
     }
 
-    return $error;
+    return $check;
+
 }

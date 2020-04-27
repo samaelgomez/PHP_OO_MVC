@@ -43,10 +43,10 @@
             
             $check = true;
             
-            if (isset($_POST['create'])){
+            if (isset($_POST['create'])){              
                 $check=validate();
                 
-                if ($check){
+                // if ($check){
                     $_SESSION['name']=$_POST;
                     try{
                         $dao = new DAO_user();
@@ -64,7 +64,7 @@
             			// $callback = 'index.php?page=503';
     			        // die('<script>window.location.href="'.$callback .'";</script>');
             		}
-                }
+                // }
             }
             include("module/user/view/create_user.php");
             break;

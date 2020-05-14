@@ -5,38 +5,38 @@ The technologies used in this webpage are: PHP, JS, jQuery, HTML, CSS, Bootstrap
 
 ## Files architecture
 
-┌ DAO
-│  ├ controllers
-│  └ Models
-├ model
-├ module
-│    ├ aboutus
-│    ├ contact
-│         ├ controller
-│         └ view
-│    ├ inicio
-│         ├ controller
-│         ├ model
-│         └ view
-│    ├ lang
-│    ├ services
-│    ├ shop
-│         ├ controller
-│         ├ model
-│         └ view
-│    └ user
-│         ├ controller
-│         ├ model
-│         └ view
-├ utils
-└ view
-    ├ css
-    ├ fonts
-    ├ img
-       ├ bg-img
-       └ core-img
-    ├ inc
-    ├ js
+┌ DAO  
+│  ├ controllers  
+│  └ Models  
+├ model  
+├ module  
+│    ├ aboutus  
+│    ├ contact  
+│         ├ controller  
+│         └ view  
+│    ├ inicio  
+│         ├ controller  
+│         ├ model  
+│         └ view  
+│    ├ lang  
+│    ├ services  
+│    ├ shop  
+│         ├ controller  
+│         ├ model  
+│         └ view  
+│    └ user  
+│         ├ controller  
+│         ├ model  
+│         └ view  
+├ utils  
+└ view  
+    ├ css  
+    ├ fonts  
+    ├ img  
+       ├ bg-img  
+       └ core-img  
+    ├ inc  
+    ├ js  
     └ scss
 
 ## CRUD

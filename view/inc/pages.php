@@ -18,6 +18,12 @@
 		case "contactus";
 			include("module/contact/view/".$_GET['page'].".html");
 			break;
+		case "login";
+			include("module/auth/".$_GET['page'].".html");
+			break;
+		case "register";
+			include("module/auth/".$_GET['page'].".html");
+			break;
 		case "404";
 			include("view/inc/error".$_GET['page'].".php");
 			break;

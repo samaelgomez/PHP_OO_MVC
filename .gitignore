@@ -1,2 +1,3 @@
 # Contact map
 module/contact/view/map.js
+module/auth/*

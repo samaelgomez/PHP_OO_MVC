@@ -57,5 +57,6 @@
 		<script type="text/javascript" src="module/inicio/model/carousel.js" ></script>
 		<script type="text/javascript" src="module/inicio/model/cards.js" ></script>
 		<script type="text/javascript" src="module/contact/view/map.js" ></script>
+		<script type="text/javascript" src="module/auth/auth_js.js" ></script>
     </head>
     <body>

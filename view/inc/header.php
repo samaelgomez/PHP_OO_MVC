@@ -29,7 +29,7 @@
                         </div>
                         <!-- Login Area -->
                         <div class="reloader login-area">
-                            <a href="#"><span>Login / Register</span> <i class="fa fa-lock" aria-hidden="true"></i></a>
+                            <a href="index_con.php?page=login"><span>Login</span> <i class="fa fa-lock" aria-hidden="true"></i></a>
                         </div>
                     </div>
                 </div>

@@ -5,6 +5,7 @@ The technologies used in this webpage are: PHP, JS, jQuery, HTML, CSS, Bootstrap
 
 ## Files architecture
 
+<pre>
 ┌ DAO  
 │  ├ controllers  
 │  └ Models  
@@ -38,6 +39,7 @@ The technologies used in this webpage are: PHP, JS, jQuery, HTML, CSS, Bootstrap
     ├ inc  
     ├ js  
     └ scss
+</pre>
 
 ## CRUD
 

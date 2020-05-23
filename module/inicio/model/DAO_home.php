@@ -51,4 +51,13 @@
             // echo json_encode($this->multiple_return_query($sql));
             return $this->multiple_return_query($sql);
         }
+        function get_details($data){
+            $GameName = $data;
+            $sql = "SELECT name AS VideogameName, pegi AS VideogamePegi, edition AS VideogameEdition, languages AS VideogameLanguages, videogame_image AS VideogameImage
+            FROM videogames
+            WHERE name = '".implode($GameName["product_name"])."'";
+
+            return $this->multiple_return_query($sql);
+        }
+
     }

@@ -22,7 +22,7 @@ function make_list(data) {
         data.list.map((element)=>{
             return product_content += `
                                         <div class="single-articles-area d-flex flex-wrap mb-30">
-                                            <div class="article-thumbnail">
+                                            <div class="article-thumbnail" id=${element.VideogameName}>
                                                 <img src=${element.VideogameImage} alt=""></img>
                                             </div>
                                             <div class="article-content">
@@ -42,6 +42,63 @@ function make_list(data) {
             return {header:product_header,content:product_content}
 }
 
+function game_details(data) {
+
+    console.log(data[0].VideogameName)
+
+    let product_content = ""
+    
+    product_content =`
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-12 col-md-6">
+                <div class="single-game-review-area style-2 mt-70">
+                    <div class="game-content">
+                        <span class="game-tag">Adventure</span>
+                        <a href="single-game-review.html" class="game-title">${data[0].VideogameName.replace("_", " ")}</a>
+                        <div class="game-meta">
+                            <a href="#" class="game-date">July 12, 2018</a>
+                            <a href="#" class="game-comments">2 Comments</a>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris velit arcu, scelerisque dignissim massa quis, mattis facilisis erat. Aliquam erat volutpat. Sed efficitur diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris velit arcu, scelerisque dignissim massa quis, mattis facilisis erat. Aliquam erat volutpat. Sed efficitur diam.</p>
+                        <p>Pegi: ${data[0].VideogamePegi}</p>
+                        <p>Edition: ${data[0].VideogameEdition}</p>
+                        <p>Languages: ${data[0].VideogameLanguages}</p>
+                        <!-- Download & Rating Area -->
+                        <div class="download-rating-area">
+                            <div class="download-area">
+                                <a href="#"><img src="view/img/core-img/app-store.png" alt=""></a>
+                                <a href="#"><img src="view/img/core-img/google-play.png" alt=""></a>
+                            </div>
+                            <div class="rating-area mt-30">
+                                <h3>8.2</h3>
+                                <div class="stars">
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- *** Barfiller Area *** -->
+            <div class="col-12 col-md-6">
+                <div class="egames-barfiller">
+                    <a href="#"><img src="${data[0].VideogameImage}"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    `
+
+    return product_content;
+
+}
+
 $(document).on("ready",async ()=>{
 let stored_page = window.localStorage.getItem('loaded_page')
     switch (stored_page) {
@@ -57,6 +114,19 @@ let stored_page = window.localStorage.getItem('loaded_page')
             console.log(err)
         })
             break;
+
+        case "game_details":
+            await api("POST", "controller_home.php?op=get_details", {data:{product_name:[window.localStorage.getItem('selected_game')]}})
+            .then((data)=>{
+                console.log(data)
+                let html = game_details(data)
+                $(".filters").html("")
+                $(".videogame_details").append(html);
+            })
+            .catch((err)=>{
+                console.log(err)
+            })
+                break;
     
         default:
             $(".product_header").html("")
@@ -70,6 +140,14 @@ let stored_page = window.localStorage.getItem('loaded_page')
             window.localStorage.removeItem('category')
             location.reload();
         }
+    })
+
+    $("body").on("click",".article-thumbnail",function(e) {
+        console.log(e.target.id)
+        window.localStorage.removeItem('category')
+        window.localStorage.setItem('loaded_page', 'game_details')
+        window.localStorage.setItem('selected_game', e.target.id)
+        location.reload();
     })
 
     let checked_filters = [];
@@ -91,7 +169,7 @@ let stored_page = window.localStorage.getItem('loaded_page')
         checked_filters.forEach((filter)=>{
             console.log(filter.type);
             
-            return filtros = {... filtros , [filter.type]:[...filtros[filter.type], filter.name ]}
+            return filtros = {... filtros , [filter.type]:[...filtros[filter.type], filter.name ]} // ... adds to filtros
         })
         console.log(filtros);
         api("POST", "controller_home.php?op=get_products", {data:{filters:filtros}})

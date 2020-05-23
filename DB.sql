@@ -23,17 +23,17 @@ CREATE TABLE videogames (
   PRIMARY KEY (name)
 );
 INSERT INTO videogames (name, pegi, edition, languages, videogame_image)
-VALUES ("Tekken 7", "16", "deluxe", "engish", "view/img/bg-img/201.jpg"),
-	   ("Soul Calibur VI", "16", "standard", "english", "view/img/bg-img/202.jpg"),
+VALUES ("Tekken_7", "16", "deluxe", "engish", "view/img/bg-img/201.jpg"),
+	   ("Soul_Calibur_VI", "16", "standard", "english", "view/img/bg-img/202.jpg"),
        ("Danganronpa", "16", "standard", "spanish", "view/img/bg-img/203.jpg"),
-       ("Dark Souls", "18", "collectionist", "english, spanish, italian", "view/img/bg-img/204.jpg"),
-       ("Doki Doki Literature Club", "18", "standard", "english, spanish", "view/img/bg-img/205.jpg"),
-       ("Final Fantasy", "12", "deluxe", "english", "view/img/bg-img/206.jpg"),
-       ("Ghost Trick: Phantom Detective", "12", "standard", "english, italian", "view/img/bg-img/207.jpg"),
-       ("Kingdom Hearts", "12", "standard", "english, italian, spanish", "view/img/bg-img/208.png"),
-       ("Nine Hours, Nine Persons, Nine Doors", "18", "standard", "english", "view/img/bg-img/209.jpg"),
-       ("Phoenix Wright: Ace Attorney", "7", "standard", "english, spanish", "view/img/bg-img/210.jpg"),
-       ("Professor Layton and the Curious Village", "3", "standard", "english, italian, spanish", "view/img/bg-img/211.jpg");
+       ("Dark_Souls", "18", "collectionist", "english, spanish, italian", "view/img/bg-img/204.jpg"),
+       ("Doki_Doki_Literature_Club", "18", "standard", "english, spanish", "view/img/bg-img/205.jpg"),
+       ("Final_Fantasy", "12", "deluxe", "english", "view/img/bg-img/206.jpg"),
+       ("Ghost_Trick:_Phantom_Detective", "12", "standard", "english, italian", "view/img/bg-img/207.jpg"),
+       ("Kingdom_Hearts", "12", "standard", "english, italian, spanish", "view/img/bg-img/208.png"),
+       ("Nine_Hours,_Nine_Persons,_Nine_Doors", "18", "standard", "english", "view/img/bg-img/209.jpg"),
+       ("Phoenix_Wright:_Ace_Attorney", "7", "standard", "english, spanish", "view/img/bg-img/210.jpg"),
+       ("Professor_Layton_and_the_Curious_Village", "3", "standard", "english, italian, spanish", "view/img/bg-img/211.jpg");
 CREATE TABLE if not exists category_list (
 	category_id int,
     videogame varchar(255),
@@ -45,17 +45,17 @@ CREATE TABLE if not exists category_list (
 );
 INSERT INTO category_list (category_id, videogame)
 VALUES (4,"Danganronpa"),
-       (3,"Dark Souls"),
-       (4,"Dark Souls"),
-       (2,"Doki Doki Literature Club"),
-       (4,"Doki Doki Literature Club"),
-       (3,"Final Fantasy"),
-       (5,"Final Fantasy"),
-       (3,"Ghost Trick: Phantom Detective"),
-	   (3,"Kingdom Hearts"),
-       (5,"Kingdom Hearts"),
-       (2,"Nine Hours, Nine Persons, Nine Doors"),
-       (3,"Phoenix Wright: Ace Attorney"),
-       (3,"Professor Layton and the Curious Village"),
-       (1,"Soul Calibur VI"),
-       (1,"Tekken 7");
+       (3,"Dark_Souls"),
+       (4,"Dark_Souls"),
+       (2,"Doki_Doki_Literature_Club"),
+       (4,"Doki_Doki_Literature_Club"),
+       (3,"Final_Fantasy"),
+       (5,"Final_Fantasy"),
+       (3,"Ghost_Trick:_Phantom_Detective"),
+	     (3,"Kingdom_Hearts"),
+       (5,"Kingdom_Hearts"),
+       (2,"Nine_Hours,_Nine_Persons,_Nine_Doors"),
+       (3,"Phoenix_Wright:_Ace_Attorney"),
+       (3,"Professor_Layton_and_the_Curious_Village"),
+       (1,"Soul_Calibur_VI"),
+       (1,"Tekken_7");
